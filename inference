@@ -1,0 +1,20 @@
+import pickle
+import numpy as np
+from sklearn.tree import DecisionTreeClassifier
+
+# Load the trained Decision Tree model
+with open('dt_model.pkl', 'rb') as f:
+    dt_model = pickle.load(f)
+
+# Example: Make inference on new data
+# Replace this with your actual data
+X_new = np.array([[5.1, 3.5, 1.4, 0.2],
+                   [6.2, 2.9, 4.3, 1.3]])
+
+# Make predictions
+predictions = dt_model.predict(X_new)
+probabilities = dt_model.predict_proba(X_new)
+
+# Display results
+print("Predictions:", predictions)
+print("Probabilities:", probabilities)
